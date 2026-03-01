@@ -3,10 +3,12 @@ class ContactManager {
     private val gruppy = mutableListOf<ContactGroup>()
     private val fileHandler = FileHandler()
     private var sleduyushchiyId = 1
+    //Я создаю главный класс, который управляет всеми контактами и группами.
 
     init {
         zagruzitDannye()
     }
+    //При создании класса я сразу загружаю данные из файлов.
 
     private fun zagruzitDannye() {
         kontakty.addAll(fileHandler.zagruzitKontakty())
@@ -16,13 +18,13 @@ class ContactManager {
             if (it.id >= sleduyushchiyId) sleduyushchiyId = it.id + 1
         }
     }
-
-    // 1. Показать все контакты
+    
     fun pokazatVseKontakty() {
         if (kontakty.isEmpty()) {
             println("\nНет контактов.")
             return
         }
+        //Я показываю все контакты.
 
         println("\n=== ВСЕ КОНТАКТЫ (${kontakty.size}) ===")
         kontakty.forEach { vyvestiKontakt(it) }
