@@ -6,3 +6,4 @@ data class Contact(
     val group: String,
     val notes: String = ""
 )
+//Я создаю класс для хранения контакта
